@@ -1,0 +1,112 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.app {
+    margin-bottom: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10rem;
+    &-info {
+        max-width: 63rem;
+    }
+    &-title {
+        margin-bottom: 4rem;
+        @include section-title($text-dark);
+    }
+    &-active {
+        font-style: italic;
+        color: $text-accent;
+    }
+    &-text {
+        margin-bottom: 4rem;
+        @include text-subtitle;
+        color: $text-dark;
+    }
+    &-image {
+        max-width: 63rem;
+        width: 100%;
+    }
+    &-img {
+        max-width: 63rem;
+    }
+    &-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+    }
+    &-btn {
+        max-width: 20rem;
+        width: 100%;
+        padding: 1rem 2rem;
+        background-color: $bg-body;
+        border: solid .1rem $border-dark;
+        border-radius: 10rem;
+        transition: .7s ease;
+    }
+    &-icon path,
+    &-intro,
+    &-name {
+        transition: .7s ease;
+    } 
+    &-icon {
+        width: 3.6rem;
+        margin-right: .8rem;
+        transition: all 1s ease;
+    }
+    &-intro {
+        @include text-intro;
+    }
+    &-name {
+        @include text-link; 
+    } 
+}
+@media (hover: hover) and (pointer: fine) {
+    .app-btn:hover {
+        background-color: $bg-container;
+        transition: all 1s ease;
+        cursor: pointer;
+    }
+    .app-btn:hover svg.app-icon path {
+        fill: $text-light;
+        transition: all .7s ease;
+    } 
+    .app-btn:hover .app-intro,
+    .app-btn:hover .app-name {
+        color: $text-light;
+        transition: all .7s ease;
+        cursor: pointer;
+    } 
+}
+//ADAPTIVE 
+@media screen and (max-width: 1400px) {
+    .app {
+        &-info {
+            max-width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 1090px) {
+    .app {
+        &-info {
+            max-width: 85%;
+        }
+    }
+}
+@media screen and (max-width: 768.9px) {
+    .app {
+        &-info {
+            max-width: 68.8rem;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .app {
+        gap: 4rem;
+        &-title {
+            font-size: 3.2rem;
+        }
+    }
+}

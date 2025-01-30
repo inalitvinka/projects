@@ -1,0 +1,205 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.menu {
+    margin-bottom: 10rem;
+    &-name,
+    &-tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-title {
+        max-width: 80rem;
+        width: 100%;
+        margin-bottom: 4rem;   
+        @include section-title ($text-dark);
+        text-align: center;
+    }
+    &-active {
+        font-style: italic;
+        color: $text-accent;
+    }
+    &-tabs {
+        margin-bottom: 4rem;
+        gap: 1.6rem;
+    }
+    &-tab {
+        padding: .8rem 1.6rem .8rem .8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .8rem;
+        border: solid .1rem $border-light;
+        border-radius: 10rem;
+        transition: .7s ease;
+        &__name,
+        &__icon {
+            transition: all .7s ease;
+        }
+        &__icon {
+            padding: .5rem .7rem;
+            background-color: $border-light;
+            border: solid .1rem $border-light;
+            border-radius: 10rem;
+        }
+        &__ico {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+        &__name {
+            @include text-link;
+            text-transform: capitalize;
+        }
+    }
+}
+.menu-tab__active {
+    background: $bg-container;
+    pointer-events: none; 
+}
+.menu-tab__active .menu-tab__name {
+    color: $text-light;
+}
+.menu-tab__active .menu-tab__icon {
+    background-color: $bg-body;
+}
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4rem;    
+    }
+    &-cards.menu-hidden {
+        animation: menu-hidden 1s linear 1;
+    }
+    &-card {
+        max-width: 31rem;
+        height: 50.6rem;
+        border-radius: 4rem;
+        border: solid .1rem $border-light;
+    }
+    &-image {
+        width: 31rem;
+        height: 31rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 4rem;
+        transition: .5s;
+    }
+    &-img {
+        width: 100%;
+        transform: scale(1.1);
+        transition: .5s ease;
+    }
+    &-info {
+        padding: 2rem;
+        max-width: 27rem;
+    }
+    &-title {
+        margin-bottom: 1.2rem;  
+    }
+    &-text {
+        width: 27rem;
+        height: 7.2rem;
+        margin-bottom: 1.2rem;
+        @include text-subtitle;
+        color: $text-dark;
+    }
+    &-title,
+    &-price {
+        @include text-card;
+        color: $text-dark;  
+    }
+    &-loader {
+        display: none;
+        margin-top: 4rem;
+        width: 6rem;
+        padding: 1.6rem 1.6rem 1.5rem;
+        border: .1rem solid $border-dark;
+        border-radius: 10rem;
+        transition: .7s ease;
+    }
+    &-loader.flex {
+        display: flex;
+    }
+    &-ico path {
+        transition: .5s ease;
+    }
+}
+@keyframes menu-hidden {
+    0% {
+        opacity: 1
+    }
+    35% {
+        opacity: 0
+    }
+    55% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+  }
+@media (hover: hover) and (pointer: fine) {
+    .menu-tab:hover {
+        background-color: $bg-container;
+        transition: all .7s ease;
+        cursor: pointer;
+    }
+    .menu-tab:hover .menu-tab__icon {
+        background-color: $bg-body;
+    }
+    .menu-tab:hover .menu-tab__name {
+        color: $text-light;
+        transition: all .7s ease;
+    }
+    .gallery-card:hover .gallery-img {
+        transform: scale(1);
+        transition: transform .7s;
+        cursor: pointer;
+    }
+    .gallery-image:hover,
+    .gallery-card:hover {
+        cursor: pointer;
+    }
+    .gallery-loader:hover {
+        background-color: $bg-container;
+        border-color: $bg-container;
+        transition: all .7s ease;
+        cursor: pointer;
+    } 
+    .gallery-loader:hover .gallery-ico path {
+        stroke: $text-light;
+        transition: all .7s ease;
+    }
+}
+// ADAPTIVE 
+@media screen and (max-width: 768.9px) {
+    .gallery {
+        &-card {
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(8) {
+                display: none;
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .menu {
+        &-title {
+            font-size: 3.2rem;
+        }
+        &-tabs {
+            gap: .8rem;
+        }
+    }
+}

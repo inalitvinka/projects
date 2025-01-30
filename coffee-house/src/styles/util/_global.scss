@@ -1,0 +1,94 @@
+/*=======GLOBAL=======*/
+@import "var";
+@import "fonts";
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    display: inline-block;
+    background: transparent;
+    text-decoration: none;
+}
+
+a:hover,
+a:visited {
+    text-decoration: none;
+    cursor: default;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    // vertical-align: top;
+}
+textarea {
+    resize: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Inter';
+    // font-family: 'Inter', sans-serif;
+    background-color: $bg-body;
+    color:$text-dark;
+}
+
+.container {
+    max-width: 140rem; // content width plus paddings
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+// ADAPTIVE
+@media screen and (max-width: 768.9px) {
+    .container {
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+}
+@media screen and (max-width: 715px) {
+    .container {
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .container {
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+    }
+}
+
+
+

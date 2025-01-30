@@ -1,0 +1,260 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.modal {
+    &-overlay {
+        padding: 0 4rem;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(64, 63, 61, 0);
+        transition: background .2s ease-in;
+        height: 100vh;
+        overflow-y: auto;
+    }
+    &-window {
+        position: relative;
+        margin: 0 auto;
+        max-width: 80rem;
+        width: 100%;
+        background: $bg-body;
+        border-radius: 4rem;
+        transform: translateY(-50rem);
+        transition: transform .5s ease-in;
+    }
+    &-content {
+        padding: 1.6rem;
+        display: flex;
+        gap: 2rem;
+    }
+    &-image {
+        width: 31rem;
+        height: 31rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 4rem;
+        transition: .5s;
+    }
+    &-img {
+        width: 100%;
+        transform: scale(1.1);
+        transition: .5s ease;
+    }
+    &-description {
+        max-width: 43.8rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;  
+    }
+    &-title {
+        margin-bottom: 1.2rem;
+    }
+    &-total {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-title,
+    &-price {
+        @include text-card;
+        color: $text-dark;
+    }
+    &-text,
+    &-order__name,
+    &-order__additives {
+        @include text-subtitle;
+        color: $text-dark;
+    }
+    &-order {
+        display: flex;
+        flex-direction: column;
+        gap: .8rem;
+    }
+    &-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .8rem;
+    }
+    &-tab {
+        @include menu-tab; 
+    }
+    &-tab__active {
+        background: $bg-container;
+    }
+    &-tab__active .modal-icon {
+        background-color: $bg-body;
+    }
+    &-tab__active .modal-size {
+        color: $text-light;
+    }
+    &-icon,
+    &-size {
+        @include text-link;
+        transition: all .7s ease;
+    }
+    &-icon {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $border-light;
+        border: solid .1rem $border-light;
+        border-radius: 10rem;
+        transition: all .7s ease;
+    }
+    &-info {
+        width: 100%;
+        display: flex;
+        gap: 1.5rem;
+        padding: 1.2rem 0;
+        border-top: 1px solid $border-light;
+        @include text-intro;
+    }
+    &-button {
+        max-width: 43.8rem;
+        width: 100%;
+        padding: 1rem 7.8rem;
+        border: 1px solid $bg-container;
+        border-radius: 10rem;
+        text-align: center;
+        @include text-link;
+        transition: all 1s;
+    }
+}
+body.lock {
+    overflow: hidden;
+}
+// modal open => visible
+.modal.open .modal-overlay,
+.modal.open .modal-window {
+    opacity: 1;
+    z-index: 10;
+}
+// modal deafult => hidden
+.modal-overlay, 
+.modal-window {
+    opacity: 0;
+    z-index: -1;
+}
+// animation
+.modal.open .modal-overlay {
+    background: $bg-backdrop;
+}
+.modal.open .modal-window {
+    transform: translateY(38%);
+    transition: transform .5s ease-in;
+}
+// animation for closing
+.modal.hide .modal-overlay,
+.modal.hide .modal-window {
+    opacity: 1;
+    z-index: 100;
+}
+.modal.hide .modal-overlay {
+    background: rgba(64, 63, 61, 0);
+}
+.modal.hide .modal-window {
+    transform: translateY(-50rem);
+}
+@media (hover: hover) and (pointer: fine) {
+    .modal {
+        &-window:hover {
+            cursor: pointer;
+        }
+        &-button:hover {
+            color: $text-light;
+            background-color: $bg-container;
+            transition: all 1s ease;
+        }
+    }
+    .modal-tab:hover {
+        background: $bg-container;
+        transition: all .7s ease;
+    }
+    .modal-tab:hover .modal-icon {
+        background: $bg-body;
+        transition: all .7s ease;
+    }
+    .modal-tab:hover .modal-size {
+        color: $text-light;
+        transition: all .7s ease;
+    }
+}
+
+//ADAPTIVE 
+@media screen and (max-width: 870px) {
+    .modal {
+        &-description {
+            max-width: 38rem;  
+        }
+    }
+}
+@media screen and (max-width: 813px) {
+    .modal {
+        &-description {
+            max-width: 37rem;  
+        }
+    }
+}
+@media screen and (max-width: 768.9px) {
+    .modal {
+        &-description {
+            max-width: 32.6rem;  
+        }
+    }
+}
+@media screen and (max-width: 733px) {
+    .modal {
+        &-overlay {
+            padding: 0 2rem;
+        }
+    }
+}
+@media screen and (max-width: 705px) {
+    .modal {
+        &-image {
+            width: 25rem;
+            height: 25rem;
+        }
+        &-img {
+            width: 100%;
+            transform: scale(1.1);
+            transition: .5s ease;
+        }
+    }
+}
+@media screen and (max-width: 650px) {
+    .modal {
+        &-overlay {
+            padding: 0 1.5rem;
+        }
+        &-image {
+            width: 20rem;
+            height: 20rem;
+        }
+        &-img {
+            width: 100%;
+            transform: scale(1.1);
+            transition: .5s ease;
+        }
+    }
+}
+@media screen and (max-width: 597px) {
+    .modal {
+        &-description {
+            max-width: 43.8rem;
+        }
+        &-image {
+           display: none;
+        }
+        &-img {
+            display: none;
+        }
+    }
+}

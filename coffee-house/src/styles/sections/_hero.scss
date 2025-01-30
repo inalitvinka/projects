@@ -1,0 +1,140 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.hero {
+    margin-bottom: 10rem;
+    border-radius: 4rem;
+    position: relative;
+    height: 64.4rem;
+    &-video {
+        position: relative;
+        max-width: 136rem;
+        height: 64.4rem;
+        border-radius: 4rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+    }
+    &-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 4rem;
+    }
+    &-info {
+        position: absolute;
+        top: 10rem;
+        left: 10rem;
+        max-width: 53rem;
+        width: 100%;
+    }
+    &-title,
+    &-text {
+        margin-bottom: 4rem;
+    }
+    &-title {
+        @include text-title;
+    }
+    &-active {
+        font-style: italic;
+        color: $text-accent;
+    }
+    &-text {
+        @include text-subtitle;
+    }
+    &-btntitle  {
+        transform: translate(1.1rem);
+        transition: transform .5s;
+    }
+    &-svg {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s, visibility 0s linear .5s;
+    }
+    &-btn {
+        max-width: 20rem;
+        width: 100%;
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include text-link; 
+        @include button-style;
+    }
+}
+@media (hover: hover) and (pointer: fine) {
+    .hero-btn:hover .hero-svg {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+    } 
+    .hero-button:hover, 
+    .hero-btn:hover {
+        cursor: pointer;
+    } 
+    .hero-btn:hover .hero-btntitle {
+        transform: translate(-.8rem);
+        transition: transform .7s;
+    }      
+}
+//ADAPTIVE 
+@media screen and (max-width: 768.9px) {
+    .hero {
+        &-info {
+            top: 10rem;
+            left: 6rem;
+            margin-right: 1rem;   
+        }
+        &-btntitle {
+            transform: translate(-.6rem);
+        }  
+        &-svg {
+            opacity: 1;
+            visibility: visible;
+        }  
+    }
+}
+@media screen and (max-width: 650px) {
+    .hero {
+        &-info {
+            top: 5.8rem;
+            left: 1.6rem;    
+        }
+    }
+}
+@media screen and (max-width: 579px) {
+
+}
+@media screen and (max-width: 500px) {
+    .hero {
+        height: 552px;
+        &-video {
+            max-height: 552px;
+        }
+        &-info {
+            top: 5.8rem;
+            left: 1.6rem;
+            margin-right: 5rem;  
+        }
+        &-title {
+            font-size: 4.2rem;
+            line-height: 115%;
+        }
+    }
+}
+@media screen and (max-width: 380px) {
+    .hero {
+        height: 552px;
+        &-video {
+            max-height: 552px;
+        }
+        &-info {
+            max-width: 31.6rem;
+            width: 100%;  
+        }
+    }
+}

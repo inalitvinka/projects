@@ -1,0 +1,124 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.footer {
+    margin-bottom: 4rem;
+    padding: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10rem;
+    background-color: $bg-container;
+    border-radius: 4rem;
+    &-info {
+        max-width: 53rem;
+        width: 100%
+    }
+    &-title {
+        margin-bottom: 4rem;
+        @include section-title($text-light);
+    }
+    &-active {
+        color: $text-accent;
+        font-style: italic;
+    }
+    &-social {
+        display: flex;
+        gap: 1.2rem;
+    }
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.65rem;
+        border: solid .1rem $border-light;
+        border-radius: 10rem;
+        transition: .7s ease;
+    }
+    &-icon path {
+        transition: .7s ease;
+    }
+    &-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        &__title {
+            margin-bottom: 4rem; 
+            @include text-card;
+            color: $text-light;   
+        }
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem
+        }
+        &__link {
+            position: relative;
+            &::after {
+                position: absolute;
+                content: '';
+                left: 50%;
+                bottom: -20%;
+                transform: translateX(-50%);
+                display: block;
+                width: 0;
+                height: .2rem;
+                background: $text-light;
+                transition: .5s;
+            }    
+        }
+        &__link,
+        &__item {
+            @include text-link;
+            color: $text-light;
+        }
+        &__img {
+            width: 2rem;
+            height: 2rem;
+            margin-right: .8rem;
+        }
+    }
+}
+@media (hover: hover) and (pointer: fine) {
+    .footer-item:hover {
+        background-color: $bg-body;
+        transition: all .7s ease-out;
+        cursor: pointer;
+    }
+    .footer-item:hover .footer-icon path {
+        stroke: $text-dark;
+        transition: all .7s ease-out;
+    }
+    .footer-nav__link:hover {
+        cursor: pointer;
+    }
+    .footer-nav__link:hover:after {
+        width: 100%;
+    }
+}
+//ADAPTIVE 
+@media screen and (max-width: 1131px) {
+    .footer {
+        align-items: center;
+        justify-content: center;
+        &-nav {
+            max-width: 53rem;
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 768.9px) {
+    .footer {
+        padding: 10rem 6rem 10.5rem;
+        justify-content: flex-start;
+    }
+}
+@media screen and (max-width: 500px) {
+    .footer {
+        padding: 6rem 1.6rem 6.5rem;
+        gap: 4rem;
+        &-title {
+            font-size: 3.2rem;
+        }
+    }
+}

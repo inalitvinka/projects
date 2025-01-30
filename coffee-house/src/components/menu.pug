@@ -1,0 +1,24 @@
+section.container
+    .menu
+        .menu-name
+            h1.menu-title Behind each of our cups hides an <span class="menu-active">amazing surprise</span>
+        .menu-tabs
+            .menu-tab.menu-tab__coffee.menu-tab__active(data-tab='coffee')
+                .menu-tab__icon(data-tab='coffee') 
+                    img.menu-tab__ico(src=require("../assets/images/svg/coffee.svg"), alt="coffee" data-tab='coffee')
+                p.menu-tab__name(data-tab='coffee') coffee
+            .menu-tab.menu-tab__tea(data-tab='tea')
+                .menu-tab__icon(data-tab='tea') 
+                    img.menu-tab__ico(src=require("../assets/images/svg/tea.svg"), alt="tea" data-tab='tea')
+                p.menu-tab__name(data-tab='tea') tea
+            .menu-tab.menu-tab__dessert(data-tab='dessert') 
+                .menu-tab__icon(data-tab='dessert')
+                    img.menu-tab__ico(src=require("../assets/images/svg/dessert.svg"), alt="dessert" data-tab='dessert')
+                p.menu-tab__name(data-tab='dessert')  dessert
+        .gallery
+            .gallery-cards#menu
+            .gallery-loader#loader 
+                <svg class="gallery-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>

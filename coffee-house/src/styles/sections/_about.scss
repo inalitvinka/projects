@@ -1,0 +1,92 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.about {
+    margin-bottom: 10rem;
+    &-title {
+        margin-bottom: 4rem;
+        @include section-title($text-dark);
+    }
+    &-active {
+        font-style: italic;
+        color: $text-accent;
+    }
+    &-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+    }
+    &-box {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    &-image {
+        max-width: 66rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 2rem;
+    }
+    &-large {
+        max-height: 59rem;
+        height: 100%;
+    }
+    &-small {
+        max-height: 43rem;
+        height: 100%;
+    }
+    &-img {
+        transform: scale(1.1);
+        transition: .5s ease;
+    }
+}
+@media (hover: hover) and (pointer: fine) {
+    .about-image:hover {
+        cursor: pointer;
+    }
+    .about-img:hover {
+        transform: scale(1);
+        transition: transform .7s;
+    } 
+}
+//ADAPTIVE 
+@media screen and (max-width: 768.9px) {
+    .about {
+        &-image {
+            max-width: 68.8rem;
+        }
+        &-img {
+            transform: scale(1.05);
+        }
+        &-small {
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .about {
+        &-title {
+            font-size: 3.2rem;
+        }
+    }
+}
+@media screen and (max-width: 426px) {
+    .about {
+        &-title {
+            font-size: 3.2rem;
+        }
+        &-image {
+            max-width: 34.8rem;
+        }
+        &-img {
+            max-width: 72.6rem;
+            width: 72.6rem;
+            transform: scale(1);
+        }
+    }
+}
