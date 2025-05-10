@@ -1,0 +1,258 @@
+.main {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 1.1rem;
+  display: flex;
+  justify-content: center;
+}
+.game {
+  max-width: 70rem;
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  background-color: rgb(0, 0, 0, .6);
+  border-radius: 1rem;
+  border: solid .2rem rgba(255, 255, 255, .7);
+  &-rounds {
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 1rem;
+  }
+  &-buttons {
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 3rem;
+  }
+  &-button {
+    width: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-top: solid .2rem rgba(218, 165, 32);
+    border-bottom: solid .2rem rgba(218, 165, 32);  
+    background-image: linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2));
+    transition: all .3s ease;
+    &:active {
+      transform: translateY(.3rem);
+      transition: all .3s ease;
+    }
+    &:disabled {
+      transform: translateY(0);
+      transition: all .7s ease;
+      cursor: auto;
+    }
+  }
+}
+.output {
+  max-width: 45rem;
+  width: 100%;
+  height: 4.5rem;
+  margin-bottom: 2rem;
+  padding: .3rem;
+  text-align: center;
+  border-bottom: solid .2rem rgba(218, 165, 32);
+  font-size: 2.8rem;
+  font-weight: 400;
+  letter-spacing: .5rem;
+  opacity: 70%;
+}
+.keyboard {
+  max-width: 65rem;
+  width: 100%;
+  height: 27rem;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  &-nums,
+  &-letters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+  }
+  &-nums {
+    margin-bottom: 1.3rem;
+  }
+  &-letters {
+    & .keyboard-item:nth-child(11) {
+      margin-left: 1rem;
+    }
+    & .keyboard-item:nth-child(19) {
+      margin-right: 1rem;
+    }
+  }
+  &-item {
+    width: 5rem;
+    height: 5rem;
+    padding: .5rem;
+    cursor: pointer;
+    border: solid .3rem rgba(255, 255, 255, .6);
+    border-radius: .7rem;
+    background-color: transparent;
+    color: rgba(255, 255, 255, .7);
+    font-size: 2.8rem;
+    transform: translateY(0);
+    &:disabled {
+      border-color: rgba(255, 255, 255, .4);
+      color: rgba(255, 255, 255, .4);
+      cursor: auto;
+    }
+  }
+}
+.key-active {
+  color: rgba(218, 165, 32);
+  border-color:rgba(218, 165, 32);
+  transform: translateY(.3rem);
+  transition: all .3s ease;
+}
+.keyboard .keyboard-item:not([disabled]):active {
+  color: rgba(218, 165, 32);
+  border-color: rgba(218, 165, 32);
+  transform: translateY(.3rem);
+  transition: all .3s ease;
+}
+.hidden {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .keyboard-item:not([disabled]):hover {
+    color: rgba(255, 255, 255, .9);
+    border-color: rgba(255, 255, 255, .8);
+  }
+}
+
+@media screen and (max-width: 701px) {
+  .output {
+    max-width: 35rem;
+    font-size: 2.3rem;
+    height: 3.7rem;
+  }
+  .keyboard {
+    max-width: 52rem;
+    height: auto;
+    &-nums,
+    &-letters {
+      gap: 1rem;
+    }
+    &-nums {
+      margin-bottom: 1rem;
+    }
+    &-item {
+      width: 4rem;
+      height: 4rem;
+      font-size: 2.3rem;
+    }
+  }
+}
+@media screen and (max-width: 570px) {
+  .game {
+    font-size: 1.7rem;
+  }
+  .output {
+    max-width: 30rem;
+    font-size: 2rem;
+    height: 3.2rem;
+  }
+  .keyboard {
+    max-width: 45rem;
+    &-nums,
+    &-letters {
+      gap: .8rem;
+    }
+    &-nums {
+      margin-bottom: .8rem;
+    }
+    &-item {
+      width: 3.5rem;
+      height: 3.5rem;
+      font-size: 2rem;
+    }
+  }
+}
+@media screen and (max-width: 507px) {
+  .game {
+    font-size: 1.5rem;
+  }
+  .output {
+    max-width: 23rem;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+  }
+  .keyboard {
+    max-width: 38rem;
+    &-nums,
+    &-letters {
+      gap: .5rem;
+    }
+    &-nums {
+      margin-bottom: .5rem
+    }
+    &-item {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.7rem;
+    }
+  }
+}
+@media screen and (max-width: 430px) {
+  .output {
+    max-width: 22rem;
+    height: 2.2rem;
+    font-size: 1.3rem;
+  }
+  .keyboard {
+    max-width: 35rem;
+    padding: .5;
+    height: auto;
+    &-item {
+      width: 2.8rem;
+      height: 2.8rem;
+      font-size: 1.3rem;
+      border-width: .2rem;
+    }
+  }
+  .game-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 410px) {
+  .keyboard {
+    max-width: 31.5rem;
+    padding: .5;
+    height: auto;
+    &-item {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1rem;
+      border-width: .2rem;
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+  .game {
+    padding: .5rem;
+  }
+  .keyboard {
+    max-width: 30rem;
+    padding: .5;
+    height: auto;
+    &-item {
+      width: 2.35rem;
+      height: 2.35rem;
+      font-size: 1rem;
+      border-width: .2rem;
+    }
+  }
+  .game-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}

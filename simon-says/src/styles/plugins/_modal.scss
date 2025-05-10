@@ -1,0 +1,96 @@
+.modal {
+  &.open .modal-overlay,
+  &.open .modal-window,
+  &.hiding .modal-overlay,
+  &.hiding .modal-window {
+    opacity: 1;
+    z-index: 100;
+  }
+  &-overlay,
+  &-window {
+    opacity: 0;
+    z-index: -1;
+  }
+  &.open .modal-overlay {
+    background-color: rgb(0, 0, 0, .7);
+    transition: all .5s ease-out;
+  }
+  &.open .modal-window {
+    transform: translateY(1%);
+  }
+  &.hiding .modal-overlay {
+    background-color: rgb(0, 0, 0, 0);
+    transition: all 1s ease-out;
+  }
+  &.hiding .modal-window {
+    transform: translateY(-50rem);
+  }
+  &-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0);
+    transition: all 1s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-window {
+    max-width: 35rem;
+    width: 100%;
+    padding: 1.5rem 1.7rem 2.7rem;
+    border-radius: .5rem;
+    background: rgb(5, 18, 42);
+    transform: translateY(-50rem);
+    transition: all .7s cubic-bezier(.65, -.55, .25, 1.55);
+  }
+  &-title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+  &-content {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  &-button {
+    display: flex;
+    justify-content: flex-end;
+    border-radius: .5rem;
+    font-size: 2.5rem;
+    background-color: transparent;
+    opacity: .7;
+    transition: all .3s ease;
+    &:hover {
+      opacity: .9;
+      transition: all .3s ease;
+      cursor: pointer;
+    }
+    &:active {
+      color: #F5443B;
+      transform: translateY(.3rem);
+      transition: all .3s ease;
+    }
+  }
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+body.lock {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 425px) {
+  .modal {
+    &-window {
+      max-width: 30rem;
+      padding: 1.5rem 1.7rem 2.7rem;
+    }
+  }
+}
