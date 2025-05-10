@@ -1,0 +1,51 @@
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    &-link {
+        max-width: 10rem;
+        margin: .7rem 5rem .7rem 0;
+        
+    }
+    &-logo {
+        width: 100%;
+        &:hover {
+            scale: 1.07;
+        }
+    }
+}
+
+// ADAPTIVE
+@media screen and (max-width: 714px) {
+    .footer {
+        &-link {
+            margin: .7rem 1rem .7rem 0;
+        }
+    }
+}
+@media screen and (max-width: 541px) {
+    .footer {
+        &-link {
+            margin: .7rem 0 .7rem 0;
+        }
+        &-logo {
+            width: 90%;
+        }
+    }
+}
+@media screen and (max-width: 525px) {
+    .footer {
+        &-logo {
+            width: 80%;
+        }
+    }
+}
+@media screen and (max-width: 426px) {
+    .footer {
+        &-link {
+            max-width: 8rem;
+        }
+    }
+}

@@ -1,0 +1,141 @@
+.modal {
+  &.open .modal-overlay,
+  &.open .modal-window,
+  &.hiding .modal-overlay,
+  &.hiding .modal-window {
+    opacity: 1;
+    z-index: 100;
+  }
+  &-overlay,
+  &-window {
+    opacity: 0;
+    z-index: -1;
+  }
+  &.open .modal-overlay {
+    opacity: 100%;
+    background: url("../assets/images/bg.avif") center/cover no-repeat;
+    transition: all .5s ease-out;
+  }
+  &.open .modal-window {
+    transform: translateY(23rem);
+  }
+  &.hiding .modal-overlay {
+    opacity: 0;
+    background: url("../assets/images/bg.avif") center/cover no-repeat;
+    transition: all 1s ease-out;
+  }
+  &.hiding .modal-window {
+    transform: translateY(100rem);
+  }
+  &-overlay {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    background: url("../assets/images/bg.avif") center/cover no-repeat;
+    transition: all 1s ease-out;
+    
+  }
+  &-window {
+    max-width: 46rem;
+    width: 100%;
+    padding: 4.5rem 1rem;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    background: $darkblue-bg-color;
+    background: linear-gradient(88deg, $linear-darkblue-start 0%, $linear-darkblue-end 99%);
+    transform: translateY(-50rem);
+    transition: transform .7s ease-in
+  }
+  &-title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &-content {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+  &-button {
+    margin-bottom: .5rem;
+    text-align: center;
+  }
+  &-btn {
+    padding: 1rem 1.5rem 1.5rem;
+    border: solid .3rem $c-modal-btn-border;
+    border-radius: 1rem;
+    font-size: 2.1rem;
+    background-color: transparent;
+    color: $c-white;
+    background-image: linear-gradient($c-orange, $c-orange);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 0 0;
+    transition: background-size .7s, color .7s;
+    &:hover {
+      border-color: $c-orange;
+      background-size: 100% 100%;
+      transition: background-size .7s, color .7s;
+      cursor: pointer;
+    }
+  }
+}
+body.lock {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 560px) {
+  .modal {
+    &-window {
+      width: 80%;
+      padding: 4.3rem 1rem;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .modal {
+    &-window {
+      width: 80%;
+      padding: 4.3rem 1rem;
+    }
+    &-title {
+      font-size: 1.8rem;
+    }
+    &-content {
+      font-size: 1.8rem;
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .modal {
+    &-window {
+      padding: 3rem 1rem;
+    }
+    &-title {
+      font-size: 1.6rem;
+    }
+    &-content {
+      font-size: 1.6rem;
+    }
+    &-btn {
+      font-size: 1.9rem;
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  .modal {
+    &-window {
+      padding: 2.5rem 1rem;
+    }
+    &-title {
+      font-size: 1.4rem;
+    }
+    &-content {
+      font-size: 1.4rem;
+    }
+    &-btn {
+      font-size: 1.7rem;
+    }
+  }
+}

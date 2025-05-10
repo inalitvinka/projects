@@ -1,0 +1,65 @@
+html {
+    font-size: 10px;
+    scroll-behavior: smooth; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    display: inline-block;
+    background: transparent;
+    text-decoration: none;
+}
+
+a:hover,
+a:visited {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+textarea {
+    resize: none;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'SofadiOne-Regular', cursive;
+    background: url("../assets/images/bg.avif") center/cover no-repeat;
+    color: $c-white;
+}
+
+.container {
+    max-width: 148rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    
+}
+.wrapper {
+    background-color: $c-bg-wrapper;
+}

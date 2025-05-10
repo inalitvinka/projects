@@ -1,0 +1,37 @@
+.header {
+  // max-width: 100%;
+  // width: 100%;
+  // margin: 1.5rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  &-title {
+    padding: 2rem 0;
+    color: #fd0e02;
+    font-size: 4.8rem;
+    text-transform: uppercase;
+  }
+  
+}
+
+// ADAPTIVE
+@media screen and (max-width: 1262px) {
+  .header-title {
+    padding-top: 2rem;
+  }
+}
+@media screen and (max-width: 525px) {
+  .header-title {
+    font-size: 4.1rem;
+  }
+}
+@media screen and (max-width: 426px) {
+  .header-title {
+    font-size: 3.9rem;
+  }
+}
+@media screen and (max-width: 376px) {
+  .header-title {
+    font-size: 3.5rem;
+  }
+}

@@ -1,0 +1,336 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  flex-grow: 1;
+  &-spider {
+    max-width: 27%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  }
+  &-spiders {
+    max-width: 10%;
+    position: absolute;
+    top: 0%;
+    left: 35%;
+  }
+  &-spiderweb {
+    max-width: 15%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+  }
+  &-whitespiderweb {
+    max-width: 23%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &-spy {
+    max-width: 4.5%;
+    position: absolute;
+    top: 0;
+    left: 7%;
+  }
+}
+
+.gallow {
+  padding-top: 13rem;
+  max-width: 35rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  &-0 {
+    width: 35%;
+  }
+  &-1 {
+    width: 14%;
+    position: absolute;
+    top: 87%;
+    right: 77%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease-in;
+  }
+  &-2, &-3, &-4, &-5, &-6 {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease-in;
+  }
+  &-2 {
+    width: 13%;
+    right: 75%;
+    top: 98%;
+  }
+  &-3, &-4 {
+    width: 11%;
+  }
+  &-3 {
+    right: 87%;
+    top: 101%;
+  }
+  &-4 {
+    right: 66%;
+    top: 99.5%;
+  }
+  &-5, &-6 {
+    width: 6.5%;
+    top: 118%;
+  } 
+  &-5 {
+    right: 82%;
+  }
+  &-6 {
+    right: 72%;
+  }
+  &-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// quiz display
+.quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7rem;
+}
+.display {
+  text-align: center;
+  &-word {
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+  }
+  &-hint {
+    max-width: 60rem;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+  }
+  &-counter {
+    font-size: 2.35rem;
+    color: #fd0e02;
+  }
+}
+
+// keyboard
+.keyboard {
+  max-width: 60rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  align-items: center;
+  justify-content: center;
+}
+.key-btn {
+  width: 5rem;
+  height: 5rem;
+  padding: .5rem;
+  cursor: pointer;
+  border: solid .3rem rgba(255, 255, 255, .9);
+  border-radius: .7rem;
+  background-color: transparent;
+  color: rgba(255, 255, 255, .9);
+  font-size: 3rem;
+  
+  &:hover {
+    color: #F5443B;
+    border-color:#F5443B;
+  }
+  &:disabled {
+    border-color: rgba(255, 255, 255, .3);
+    color: rgba(255, 255, 255, .3);
+    cursor: auto;
+  }
+}
+
+// ADAPTIVE
+@media screen and (max-width: 1262px) {
+  .main {
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 20rem;
+  }
+  .keyboard {
+    margin-bottom: 5rem;
+  }
+  .gallow {
+    padding-top: 0;
+    justify-content: center;
+    align-self: center;
+    &-1 {
+      top: 77%;
+      right: 44%;
+    }
+    &-2 {
+      top: 97%;
+      right: 42%;
+    }
+    &-3 {
+      top: 103%;
+      right: 54.5%;
+    }
+    &-4 {
+      top: 99%;
+      right: 33%;
+    }
+    &-5 {
+      top: 130%;
+      right: 50%;
+    }
+    &-6 {
+      top: 131%;
+      right: 40%;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .main {
+    &-spider {
+      max-width: 37%;
+      top: 0%;
+      left: 0%;
+    }
+    &-spiders {
+      max-width: 19%;
+      top: 0%;
+      left: 75%;
+    }
+    &-spiderweb {
+      max-width: 19%;
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+    }
+    &-whitespiderweb {
+      display: none;
+    }
+    &-spy {
+      max-width: 8%;
+      top: 0;
+      left: 7%;
+    }
+  }
+}
+@media screen and (max-width: 594px) {
+  .keyboard {
+    gap: 1rem;
+  }
+  .key-btn {
+    width: 4.8rem;
+    height: 4.8rem;
+    font-size: 2.8rem;
+  }
+}
+@media screen and (max-width: 552px) {
+  .key-btn {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 525px) {
+  .display {
+    &-word {
+      font-size: 3rem;
+    }
+    &-hint {
+      font-size: 2.2rem;
+    }
+    &-counter {
+      font-size: 2.2rem;
+    }
+  }
+  .keyboard {
+    gap: .8rem;
+  }
+}
+@media screen and (max-width: 508px) {
+  .keyboard {
+    gap: .8rem;
+  }
+  .key-btn {
+    width: 4.3rem;
+    height: 4.3rem;
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 491px) {
+  .keyboard {
+    gap: .7rem;
+  }
+}
+@media screen and (max-width: 483px) {
+  .keyboard {
+    gap: .7rem;
+  }
+  .key-btn {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 456px) {
+  .keyboard {
+    gap: .5rem;
+  }
+}
+@media screen and (max-width: 439px) {
+  .key-btn {
+    width: 3.6rem;
+    height: 3.8rem;
+    font-size: 1.9rem;
+  }
+}
+@media screen and (max-width: 426px) {
+  .display {
+    &-word {
+      font-size: 2.5rem;
+    }
+    &-hint {
+      font-size: 2rem;
+    }
+    &-counter {
+      font-size: 2rem;
+    }
+  }
+}
+@media screen and (max-width: 404px) {
+  .quiz {
+    gap: 5rem;
+  }
+  .key-btn {
+    width: 3.3rem;
+    height: 3.5rem;
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 376px) {
+  .quiz {
+    gap: 4.5rem;
+  }
+  .display {
+    &-word {
+      font-size: 2.3rem;
+    }
+    &-hint {
+      font-size: 1.7rem;
+    }
+    &-counter {
+      font-size: 2rem;
+    }
+  }
+  .key-btn {
+    width: 3.1rem;
+    height: 3.3rem;
+    font-size: 1.6rem;
+  }
+}
