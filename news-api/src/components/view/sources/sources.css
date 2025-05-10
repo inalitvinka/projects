@@ -1,0 +1,111 @@
+.sources {
+    position: fixed;
+    z-index: 100;
+    height: calc(100% - 260px);
+    padding: 0 .5rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: auto;
+    font: 300 1em 'Fira Sans', sans-serif;
+    transition: transform .5s ease-in-out;
+}
+
+.sources::-webkit-scrollbar {
+    width: 11px;
+    border-right: 2px solid #30c5ff;
+}
+
+.sources::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sources::-webkit-scrollbar-track {
+    background-color: rgb(48, 197, 255, .15);
+    border-radius: 4px;
+}
+
+.source__item {
+    background: none;
+    border: 2px solid #30c5ff;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    color: #70d6ff;
+    transition: 0.25s;
+}
+
+.source__item:focus {
+    border-color: #3fcc59;
+    color: #69db7e;
+    box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
+    transform: translateY(-0.25em);
+}
+
+.source__item-name {
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .source__item:hover {
+        border-color: #3fcc59;
+        color: #69db7e;
+        box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
+        transform: translateY(-0.25em);
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1098px) {
+    .sources {
+        padding: 0 .5rem 0 .9rem;
+    }
+
+    .source__item {
+        padding: .8em 1em;
+    }
+}
+
+@media screen and (max-width: 768.9px) {
+    .sources {
+        width: 97%;
+        height: calc(100vh - 187px);
+        padding: .5rem .35rem 1.5rem 0;
+        background: #17181c;
+        transform: translateX(-150%);
+        transition: transform .5s ease-in-out;
+    }
+
+    .source__item {
+        padding: 1em 2em;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .sources {
+        padding: .5rem .15rem 1.5rem 0;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .sources {
+        padding: .5rem .1rem 1.5rem 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sources {
+        width: 96%;
+        height: calc(100vh - 160px);
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .sources {
+        width: 95%;
+    }
+}

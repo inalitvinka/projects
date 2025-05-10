@@ -1,0 +1,229 @@
+a {
+    display: inline-block;
+    background: transparent;
+    text-decoration: none;
+}
+
+a:hover,
+a:visited {
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background: #17181c;
+    font-family: sans-serif;
+    max-width: 144rem;
+    margin: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+header {
+    padding: 10px 30px 20px;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+main {
+    margin: 1rem 0 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.burger-checkbox {
+    display: none;
+}
+
+.burger-line {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 25px;
+    top: -40px;
+    left: 4.5%;
+    border: none;
+    background: transparent;
+}
+
+.burger-line::before,
+.burger-line::after {
+    content: '';
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: #30c5ff;
+}
+
+.burger-line::before {
+    top: 0;
+    box-shadow: 0 11px 0 #30c5ff;
+    transition: box-shadow .3s .15s, top .3s .15s transform .3s;
+}
+
+.burger-line::after {
+    bottom: 0;
+    transition: bottom .3s .15s, transform .3s;
+}
+
+.burger-checkbox:checked + .burger-line::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 transparent;
+    transition: box-shadow .15s, top .3s, transform .3s .15s;
+}
+
+.burger-checkbox:checked + .burger-line::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition: bottom .3s, transform .3s .15s;
+}
+
+.burger-checkbox:checked ~ div.sources {
+    transform: translateX(0);
+    transition: transform .5s;
+}
+
+footer {
+    height: 100px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+footer .github,
+footer .rss {
+    height: 2rem;
+    transition: transform .3s;
+}
+
+footer .github {
+    width: 2rem;
+    margin: 0 0 0 2rem;
+    background: center center no-repeat url(./icons/github.svg);
+}
+
+footer .rss {
+    width: 80px;
+    margin: 0 2.5rem 0 0;
+    background: center center no-repeat url(./icons/rss.svg);
+}
+
+footer .copyright {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+footer .copyright a {
+    color: #444;
+    transition: .3s;
+}
+
+footer .copyright:before {
+    content: '©';
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .burger-checkbox:hover,
+    .burger-line:hover {
+        cursor: pointer;
+    }
+
+    footer .copyright a:hover {
+        color: #555;
+        transition: .3s;
+    }
+
+    footer .github:hover,
+    footer .rss:hover {
+        box-shadow: 0 0.5em 0.5em -0.4em #30c5ff;
+        transform: scale(1.05);
+        transition: transform .3s;
+    }
+}
+
+@media screen and (max-width: 768.9px) {
+    body.lock {
+        overflow: hidden;
+        scrollbar-gutter: stable;
+        background-color: #17181c;
+    }
+
+    .burger-checkbox {
+        visibility: hidden;
+    }
+
+    .burger-line {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    .burger-line {
+        width: 35px;
+        top: -40px;
+        left: 4.5%;
+    }
+    
+    .burger-line::before,
+    .burger-line::after {
+        height: 3px;
+    }
+    
+    footer {
+        gap: 7px;
+    }
+
+    footer .rss {
+        margin: 0 .5rem 0 0;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    .burger-line {
+        top: -35px;
+    }
+    
+    .burger-line::before,
+    .burger-line::after {
+        height: 2px;
+    }
+}
+
+@media screen and (max-width: 355px) {
+    footer .github {
+        margin: 0 0 0 .7rem;
+    }
+
+    footer .copyright {
+        font-size: 11px;
+    }
+
+    footer .rss {
+        margin: 0 1px 0 0;
+    }
+}
