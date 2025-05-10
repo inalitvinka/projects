@@ -1,0 +1,112 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.slider {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 6rem;
+  padding-bottom: 5.7rem;
+  background: url('../assets/images/bg-snow.png') center/cover no-repeat;
+  color: $c-static-white;
+  text-align: center;
+  &-caption {
+    margin-bottom: 1.2rem;
+    @include textCaption;
+    text-transform: capitalize;
+  }
+  &-title {
+    margin-bottom: 2rem;
+    @include sectionTitle;
+  }
+  &-caption,
+  &-title {
+    display: flex;
+    justify-content: center;
+  }
+  &-wrapper {
+    padding-left: 8.2rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  &-content {
+    position: relative;
+    left: 0;
+    display: flex;
+    gap: 2rem;
+    transition: all .7s ease;
+  }
+  &-text {
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;    
+  }
+  &-image {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 2rem;
+  }
+  &-img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 2rem;
+  }
+  &-buttons {
+    padding-left: .8rem;
+    padding-right: .8rem;
+    max-width: 129.2rem;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+  &-button {
+    padding: 1.5rem;
+    border-radius: 2rem;
+    border: .1rem solid $c-static-white;
+    transition: all .9s;
+    &_inactive {
+      border-color: $c-static-white40;
+      pointer-events: none;
+    }
+    &_inactive path {
+      stroke: $c-static-white40;
+      pointer-events: none;
+    }
+  }
+  &-button path {
+    transition: .9s ease;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .slider-button:hover {
+    background-color: $c-static-white;
+    transition: all .9s;
+    cursor: pointer;
+  }
+  .slider-button:hover path {
+    stroke: $c-primary;
+    transition: all .9s;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1439.9px) {
+  .slider {
+    &-wrapper {
+      padding-left: calc(8px + (82 - 8) * ((100vw - 1290.9px) / (1439.9 - 1290.9)));
+    }
+  }
+}
+@media screen and (max-width: 1290.9px) {
+  .slider {
+    &-wrapper {
+      padding-left: .8rem;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+@import "../util/var";
+@import "../util/mixins";
+
+
+.modal {
+  &.open .modal-overlay,
+  &.open .modal-window,
+  &.hiding .modal-overlay,
+  &.hiding .modal-window {
+    opacity: 1;
+    z-index: 100;
+    visibility: visible;
+  }
+  &-overlay,
+  &-window {
+    opacity: 0;
+    z-index: -1;
+  }
+  &.open .modal-overlay {
+    background-color: $bg-modal-open;
+    transition: background-color .3s ease-out;
+  }
+  &.open .modal-window {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: all .5s ease-in-out;
+  }
+  &.hiding .modal-overlay {
+    background-color: $bg-modal-hiding;
+    transition: background-color .3s ease-out;
+  }
+  &.hiding .modal-window {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+    transition: all .5s ease-in-out;
+  }
+  &-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-modal-hiding;
+    transition: background-color .3s ease-out;
+  }
+  &-window {
+    position: relative;
+    max-width: 40rem;
+    width: 100%;
+    border-radius: 2rem;
+    background: $bg-color;
+    transform: scale(0);
+    transition: all .5s ease-in-out;
+    cursor: default;
+  }
+  &-image {
+    max-width: 40rem;
+    width: 100%;
+    height: 23rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    text-align: center;
+  }
+  &-img {
+    max-width: 62rem;
+    width: auto;
+    height: 23rem;
+    scale: 1.3;
+  }
+  &-info {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+  }
+  &-content {
+    padding: 2rem;
+    border-radius: 2rem;
+    text-align: start;
+    background: $c-static-white;
+  }
+  &-category {
+    @include actionSmall;
+  }
+  &-name {
+    @include cardHeader;
+    transition: all .7s ease;
+  }
+  &-description {
+    @include paragraph;
+  }
+  &-addition {
+    margin-bottom: .8rem;
+    @include actionSmall;
+    color: $c-dark;
+  }
+  &-add {
+    display: flex;
+    gap: 1.2rem;
+  }
+  &-power,
+  &-counter {
+    @include paragraph;
+    text-transform: capitalize;
+  }
+  &-power {
+    max-width: 18.4rem;
+    width: 100%;
+  }
+  &-counter {
+    max-width: 4rem;
+    width: 100%;
+  }
+  &-snowflake {
+    max-width: 11.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-button {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+    & path {
+      transition: all .5s;
+    }
+  }
+}
+body.lock {
+  overflow: hidden;
+}
+@media (hover: hover) and (pointer: fine) {
+  .modal-overlay:hover,
+  .modal-button:hover {
+      cursor: pointer;
+  }
+  .modal-work:hover path{
+    stroke: $c-tag-purple;
+    transition: all .5s;
+  }
+  .modal-health:hover path{
+    stroke: $c-tag-green;
+    transition: all .5s;
+  }
+  .modal-harmony:hover path{
+    stroke: $c-tag-pink;
+    transition: all .5s;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .modal {
+    &-window {
+      max-width: 36.4rem;
+    }
+    &-img {      
+      scale: 1.2;
+    }
+  }
+}

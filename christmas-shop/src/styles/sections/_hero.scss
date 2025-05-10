@@ -1,0 +1,39 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.hero {
+  border-radius: 2rem 2rem 0 0;
+  padding: 6rem 0rem;
+  background: url('../assets/images/bg-ball.png') center/cover no-repeat, url('../assets/images/bg-snow.png') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  &-content {
+    max-width: 42.6rem;
+    width: 100%;
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    color: $c-static-white;
+  }
+  &-title {
+    max-width: 42.6rem;
+    width: 100%;
+    @include header1(.56rem);
+  }
+  &-button {
+    @include buttonStyle;
+    @include actionSmall;
+  }
+  &-caption { 
+    @include textCaption;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero-button:hover, 
+  .hero-btn:hover {
+    @include buttonHover;
+  }
+}

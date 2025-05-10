@@ -1,0 +1,91 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.footer {
+    max-width: 127.6rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    &-cards {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 6rem;
+    }
+    &-card {
+      width: 100%;
+      border-radius: 2rem;
+    }
+    &-link {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      background: $bg-color;
+      border-radius: 2rem;
+      color: $c-dark;
+    }
+    &-img {
+      width: 8rem;
+      height: 8rem;
+    }
+    &-info {
+      @include sectionTitle;
+      transition: color .7s;
+    }
+    &-text {
+      @include cardHeader;
+      transition: color .7s;
+    }
+    &-media {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    &-icon {
+      padding: .8rem;
+    }
+    &-icon path {
+      transition: all .7s;
+    }
+    &-copyright {
+      margin-bottom: 1.2rem;
+      @include paragraph;
+      text-align: center;
+    }
+    &-rss {
+      @include textCaption;
+      color: $c-dark;
+      transition: color .7s;
+      text-align: center;
+    }
+}
+@media (hover: hover) and (pointer: fine) {
+  .footer-card:hover .footer-link,
+  .footer-icon:hover,
+  a.footer-rss:hover {
+  cursor: pointer;
+  }
+  .footer-card:hover .footer-info,
+  .footer-card:hover .footer-text,
+  a.footer-rss:hover {
+    color: $c-primary;
+    transition: color .7s;
+  }
+  .footer-icon:hover path {
+    stroke: $c-primary;
+    transition: all .7s;
+  }
+}
+ 
+@media screen and (max-width: 1060px) {
+  .footer {
+    &-cards {
+      flex-wrap: wrap;
+    }
+  }
+}

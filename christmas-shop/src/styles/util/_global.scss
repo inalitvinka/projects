@@ -1,0 +1,76 @@
+@import "var";
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    display: inline-block;
+    background: transparent;
+    text-decoration: none;
+}
+
+a:hover,
+a:visited {
+    text-decoration: none;
+    cursor: default;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    vertical-align: top;
+}
+textarea {
+    resize: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: $c-dark;
+    background: $c-static-white;
+}
+.container {
+    max-width: 144rem;
+    width: 100%;
+    margin: 0 auto;
+    background-color: transparent;
+}
+.section {
+    padding-right: .8rem;
+    padding-left: .8rem;
+}
+.main {
+    width: 100%;
+    background: linear-gradient(to bottom, $c-primary calc(100% - .3rem), $c-static-white 100% .3rem);
+    border-radius: 2rem 2rem 2.2rem 2.2rem;
+}

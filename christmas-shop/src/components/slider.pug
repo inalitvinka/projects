@@ -1,0 +1,24 @@
+section
+    .slider.container.section
+        p.slider-caption become happier!
+        h3.slider-title in the new 2025
+        .slider-wrapper#slider-wrapper
+          .slider-content#slider
+            p.slider-text live  
+            img.slider-img(src=require("../assets/images/snowman.png"), alt="snowman")
+            p.slider-text create  
+            img.slider-img(src=require("../assets/images/christmas-trees.png"), alt="christmas-trees")
+            p.slider-text love  
+            img.slider-img(src=require("../assets/images/christmas-tree-ball.png"), alt="christmas-tree-ball")
+            p.slider-text dream 
+            img.slider-img(src=require("../assets/images/fairytale-house.png"), alt="fairytale-house")
+        .slider-buttons 
+          .slider-button.slider-button_inactive#left(data-slider="prev")
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18.5 12H6M6 12L12 6M6 12L12 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          .slider-button#right(data-slider="next") 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            

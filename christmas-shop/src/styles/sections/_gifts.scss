@@ -1,0 +1,119 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.gifts {
+    max-width: 144rem;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 2rem 2rem;
+    background: $c-primary;
+    &-hero {
+      background: url('../assets/images/bg-garland.png') top/cover no-repeat $c-primary;
+      background-size: 100%;
+      border-radius: 2rem 2rem 0 0;
+    }
+    &-name,
+    &-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-name {
+      padding: 6rem 0 0 0;
+    }
+    &-title {
+      max-width: 42.6rem;
+      width: 100%;
+      @include header1(.576rem);
+      color: $c-static-white;
+    }
+    &-buttons {
+      margin: 2rem 0;
+      padding-right: .8rem;
+      padding-left: .8rem;
+      gap: .8rem;
+    }
+    &-button {
+      padding: 1.2rem 2rem;
+      border-radius: 1.2rem;
+      @include actionSmall;
+      color: $c-static-white;
+      background: inherit;
+      transition: background 1s;
+      &:disabled {
+        background: $c-static-white20;
+        transition: background 1s;
+        pointer-events: none;
+      }
+    }
+    &-gallery {
+      padding-right: .8rem;
+      padding-left: .8rem;
+      padding-bottom: 6rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+    &-upbutton {
+      display: none;
+      position: fixed;
+      bottom: .8rem;
+      right: .8rem;
+      z-index: 10;
+      padding: 1.5rem;
+      border-radius: 10rem;
+      border: .1rem solid $c-primary;
+      background: $c-static-white;
+      transition: all .9s;
+      & svg {
+        transform: rotate(-90deg);
+      }
+    }
+}
+.gifts-gallery.hidden {
+  animation: hidden 1s linear 1
+}
+@keyframes hidden {
+  0% {
+      opacity: 1
+  }
+
+  35% {
+      opacity: 0
+  }
+
+  55% {
+      opacity: 0
+  }
+
+  100% {
+      opacity: 1
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .gifts-button:hover {
+      background: $c-static-white20;
+      transition: background 1s;
+      cursor: pointer;
+  }
+  .gifts-upbutton:hover,
+  .gifts-upbutton:hover svg {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .gifts {
+    &-title {
+      padding-right: .8rem;
+      padding-left: .8rem;
+    }
+    &-buttons {
+      gap: 0;
+    }
+    &-button {
+      padding: 1.2rem .8rem;
+    }
+  }
+}

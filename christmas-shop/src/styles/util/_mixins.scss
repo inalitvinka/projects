@@ -1,0 +1,67 @@
+@mixin header1($spacing) {
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: $spacing;
+  text-transform: uppercase;
+  text-align: center;
+}
+@mixin sectionTitle {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: .384rem;
+  text-transform: uppercase;  
+}
+@mixin textCaption {
+  font-family: 'Allura';
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: .12rem; 
+}
+@mixin paragraph {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 148%;
+  color: $c-dark;  
+}
+@mixin actionSmall {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: .06rem;
+  text-transform: uppercase;  
+}
+@mixin cardHeader {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: .128rem;
+  text-transform: uppercase;
+  color: $c-dark;
+}
+
+@mixin buttonStyle {
+  padding: 2rem 3.2rem;
+  border-radius: 2rem;
+  color: inherit;
+  background: $c-dark;
+  background-image: linear-gradient($c-static-white, $c-static-white);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% 0%;
+  transition: background-size 1s, color 1s;  
+}
+@mixin buttonHover {
+  color: $c-dark;
+  background-size: 100% 100%;
+  cursor: pointer;
+  transition: background-size 1s, color 1s; 
+}

@@ -1,0 +1,71 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.CTA {
+  padding-top: 12rem;
+  padding-bottom: 6rem;
+  border-radius: 0 0 2rem 2rem;
+  background: url('../assets/images/bg-forest.png') top/cover no-repeat, url('../assets/images/bg-snow.png') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  &-content {
+    max-width: 42.6rem;
+    width: 100%;
+    padding: 6rem 0 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: $c-static-white;
+    text-align: center;
+  }
+  &-title {
+    margin-bottom: 2rem;
+    @include sectionTitle;
+  }
+  &-button {
+    margin-bottom: 2rem;
+    @include buttonStyle;
+    @include actionSmall;
+  }
+  &-caption { 
+    margin-bottom: .8rem;
+    @include textCaption;
+  }
+  &-timer {
+    max-width: 34.4rem;
+    width: 100%;
+    padding: .8rem 1.2rem 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $c-static-white40;
+    border-radius: 2rem;
+    &__item {
+      position: relative;
+      max-width: 8rem;
+      width: 100%;
+      &:not(:last-child):after {
+        position: absolute;
+        top: 30%;
+        right: 0;
+        content: " ";
+        width: .1rem;
+        height: 2rem;
+        background: $c-static-white40;
+      }
+      & h2 {
+        @include sectionTitle;
+      }
+      & h4 {
+        @include actionSmall;
+      }
+    }
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .CTA-button:hover,
+  .CTA-btn:hover {
+    @include buttonHover;
+  }
+}
