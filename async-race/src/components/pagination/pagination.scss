@@ -1,0 +1,21 @@
+.pagination {
+  display: flex;
+  gap: 1rem;
+  margin: 4rem 0 0;
+
+  &-prev,
+  &-next {
+    width: 100%;
+    max-width: 4.5rem;
+    height: 3rem;
+    background: 0.2rem;
+  }
+
+  &-prev {
+    background: url('../../assets/images/prev.png') center/60% no-repeat;
+  }
+
+  &-next {
+    background: url('../../assets/images/next.png') center/52% no-repeat;
+  }
+}

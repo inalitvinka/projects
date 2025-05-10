@@ -1,0 +1,114 @@
+@use '../../utils/vars' as vars;
+
+.settings {
+  display: grid;
+  grid-template:
+    'text-create text-create color-create btn-create'
+    'text-update text-update color-update btn-update'
+    'btn-race btn-reset btn-generate btn-generate' 2.7rem / 0.9fr 0.9fr 0.5fr 7rem;
+  gap: 1.05rem;
+
+  width: 100%;
+  max-width: 32rem;
+  margin-bottom: 3.5rem;
+
+  font-size: 1.15rem;
+
+  &-text {
+    border-radius: 0.25rem;
+    font-size: 1.3rem;
+    color: inherit;
+
+    &_create {
+      grid-area: text-create;
+    }
+
+    &_update {
+      grid-area: text-update;
+    }
+  }
+
+  &-color {
+    width: 4rem;
+    height: 2.8rem;
+    border-radius: 0.25rem;
+
+    &_create {
+      grid-area: color-create;
+    }
+
+    &_update {
+      grid-area: color-update;
+    }
+  }
+
+  &-text,
+  &-color {
+    padding: 0 0.5rem;
+    border: unset;
+    border: dotted 0.1rem vars.$c-white;
+
+    color: vars.$c-main;
+
+    background: inherit;
+
+    &:disabled {
+      opacity: 0.4;
+    }
+  }
+
+  .car {
+    &-create,
+    &-update,
+    &-race,
+    &-reset,
+    &-generate {
+      font-size: inherit;
+    }
+
+    &-create {
+      grid-area: btn-create;
+    }
+
+    &-update {
+      grid-area: btn-update;
+    }
+
+    &-race {
+      grid-area: btn-race;
+    }
+
+    &-reset {
+      grid-area: btn-reset;
+    }
+
+    &-generate {
+      grid-area: btn-generate;
+    }
+  }
+}
+
+.race-winner {
+  position: sticky;
+  z-index: 1000;
+  bottom: 50vh;
+  left: calc(50vw - 23rem);
+
+  max-width: 33rem;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: vars.$c-gold;
+  text-align: center;
+  text-shadow: 0 0 0.5rem vars.$c-gold;
+
+  background: vars.$c-bg-winners;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .settings-color:not([disabled]):hover {
+    cursor: pointer;
+  }
+}

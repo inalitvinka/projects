@@ -1,0 +1,1 @@
+cd async-race && npx --no -- commitlint --edit ${1}

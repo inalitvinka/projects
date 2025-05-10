@@ -1,0 +1,117 @@
+@use '../../utils/vars' as vars;
+
+.cars {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    max-width: 100%;
+    border-bottom: dashed 0.15rem vars.$c-white;
+  }
+
+  &-title {
+    margin-left: 1rem;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: vars.$c-gold;
+    text-transform: capitalize;
+  }
+
+  &-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &-start {
+    background: url('../../assets/images/start.png') center/55% no-repeat;
+  }
+
+  &-reset {
+    background: url('../../assets/images/reset.png') center/55% no-repeat;
+  }
+
+  &-select {
+    background: url('../../assets/images/select.png') center/55% no-repeat;
+  }
+
+  &-remove {
+    background: url('../../assets/images/remove.png') center/55% no-repeat;
+  }
+
+  &-start,
+  &-reset,
+  &-select,
+  &-remove {
+    height: 3rem;
+    border-style: dotted;
+  }
+
+  &-finish {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 77vw;
+  }
+}
+
+.start {
+  animation: start linear forwards;
+}
+
+@keyframes start {
+  from {
+    transform: translateX(2rem);
+  }
+
+  to {
+    transform: translateX(80vw);
+  }
+}
+
+.rotate {
+  transform-origin: 21px 21px;
+  transform-box: fill-box;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (width <= 1223px) {
+  .cars-finish {
+    left: 76.5vw;
+  }
+}
+
+@media screen and (width <= 1097px) {
+  .cars-finish {
+    left: 75vw;
+  }
+}
+
+@media screen and (width <= 829px) {
+  .cars-finish {
+    left: 73.5vw;
+  }
+}
+
+@media screen and (width <= 605px) {
+  .cars-finish {
+    left: 72vw;
+  }
+}

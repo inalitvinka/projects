@@ -1,0 +1,1 @@
+export { garageView } from './garage';

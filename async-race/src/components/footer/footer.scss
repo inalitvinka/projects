@@ -1,0 +1,39 @@
+@use '../../utils/vars' as vars;
+
+.footer {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  margin: 2rem 0 1.5rem;
+  padding: 0 4rem;
+
+  &-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  &-copyright-link {
+    color: vars.$c-main;
+    text-transform: capitalize;
+    transition: transform 0.3s;
+  }
+
+  &-copyright::before {
+    content: '©';
+    margin-right: 0.7rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer {
+    &-copyright-link:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
+  }
+}

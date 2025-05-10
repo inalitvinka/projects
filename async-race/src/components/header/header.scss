@@ -1,0 +1,38 @@
+.nav {
+  display: flex;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.button {
+  padding: 0.7rem 1.5rem;
+  border: dashed 0.15rem;
+  border-radius: 0.2rem;
+
+  font-size: 1.4rem;
+  color: inherit;
+  text-align: center;
+
+  background: inherit;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+.head {
+  margin-left: 7.5rem;
+  padding: 0.5rem;
+
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: white;
+
+  background: rgb(11 51 182);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:not([disabled]):hover {
+    cursor: pointer;
+  }
+}

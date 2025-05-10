@@ -1,0 +1,13 @@
+$c-main: aquamarine;
+$c-bg: #1a1a1d;
+$c-white: #dceae6;
+$c-gold: #daa520;
+$c-bg-winners: #0a0a1780;
+
+:root {
+  --c-main: #{$c-main};
+  --c-bg: #{$c-bg};
+  --c-white: #{$c-white};
+  --c-gold: #{$c-gold};
+  --c-bg-winners: #{$c-bg-winners};
+}

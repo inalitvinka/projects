@@ -1,0 +1,77 @@
+ html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  border: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+}
+
+a:hover,
+a:visited {
+  cursor: default;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+textarea {
+  resize: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100dvh;
+
+  font-family: Tektur, sans-serif;
+  color: var(--c-main);
+
+  background: var(--c-bg);
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
