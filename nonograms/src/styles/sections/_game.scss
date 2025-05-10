@@ -1,0 +1,132 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.game {
+  &-center {
+    border-radius: .3rem;
+  }
+  &-area {
+    display: flex;
+  }
+  &-field {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    outline: solid .2rem $c-border-black;
+    border-radius: .5rem;
+    &__easy {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+    &__medium {
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+    }
+    &__hard {
+      grid-template-columns: repeat(15, 1fr);
+      grid-template-rows: repeat(15, 1fr);
+    }
+  }
+  &-cell {
+    width: 2.2rem;
+    height: 2.2rem;
+    border: solid .1rem $border-cell;
+    background: $bg-cell;
+  }
+}
+.extra-bottom-border {
+  border-bottom: solid .2rem $extra-bottom-border;
+}
+.extra-right-border {
+  border-right: solid .2rem $extra-right-border;
+}
+.extra-hover {
+  background-color: rgb(225, 215, 159);
+}
+.active {
+  background: $bg-cell $url-active-cell center/contain no-repeat;
+}
+.cross {
+  background: $bg-cell url('../assets/images/cross.png') center/contain no-repeat;
+}
+
+.topside {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-bottom: .2rem;
+  border-radius: .2rem;
+  background: $bg-hints;
+  outline: .1rem solid $c-border-black;
+  &-cell {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: .2rem;
+    &:nth-child(5n) {
+      border-right: solid .2rem $c-border-black;
+    }
+    &:last-child {
+      border: none;
+    }
+  }
+}
+.leftside {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  outline: .1rem solid $c-border-black;
+  margin-right: .1rem;
+  border-radius: .2rem;
+  background: $bg-hints;
+  &-cell {
+    height: 2.2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &:nth-child(5n) {
+      border-bottom: .2rem solid $c-border-black;
+    }
+    &:last-child {
+      border: none;
+    }
+  }
+}
+.sub-hint {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
+.easy {
+  width: 3rem;
+  height: 3rem;
+}
+.medium {
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+.hard {
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .game-cell:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .game {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+}

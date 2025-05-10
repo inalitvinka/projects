@@ -1,0 +1,98 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem 0;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  
+  &-title {
+    color: $c-gold;
+    font-size: 3.6rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    text-transform: capitalize;
+    text-shadow: .2rem .5rem .5rem $c-gold;
+  }
+  &-nav {
+    width: 11%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: .5rem;
+  }
+}
+
+.sound {
+  width: 3.5rem;
+  height: 4rem;
+  padding: 1.3rem;
+  background: url('../assets/images/sound.png') center/contain no-repeat;
+  border-radius: 1rem;
+  transition: transform 1s ease-out;
+  border: none;
+}
+.mute {
+  position: relative;
+  transform: rotate(180deg);
+  transition: transform 1s ease-out;
+}
+
+.switcher {
+  display: flex;
+  align-items: center;
+}
+.switcher-label {
+  width: 5rem;
+  height: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.switcher-input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.switcher-round {
+  position: absolute;
+  border-radius: 4rem;
+  inset: 0;
+}
+
+.switcher-round::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin: auto 0;
+  background: url('../assets/images/moon.png') center/contain no-repeat;
+  background-blend-mode: color;
+  cursor: pointer;
+}
+
+.switcher-round::before, .switcher-round {
+  transition: all .5s ease-out;
+}
+
+.switcher-input:checked + .switcher-round::before {
+  background: transparent url('../assets/images/sun.png') center/contain no-repeat;
+  transform: translateX(2rem);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sound:hover,
+  .switcher-round:hover {
+    cursor: pointer;
+  }
+}

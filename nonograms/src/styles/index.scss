@@ -1,0 +1,11 @@
+@import "./util/normalize";
+@import "./util/fonts";
+@import "./util/var";
+@import "./util/global";
+@import "./util/mixins";
+
+
+@import "./sections/header";
+@import "./sections/main";
+@import "./sections/footer";
+@import "./plugins/modal";

@@ -1,0 +1,92 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.category {
+  max-width: 50rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: .6rem;
+  &-buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 0 1.5rem;
+    border-radius: .2rem;
+    gap: .8rem;
+  }
+  &-button {
+    padding: .5rem 1rem .5rem;
+    border-radius: .5rem;
+    background: transparent;
+    font-size: 1.6rem;
+    letter-spacing: .15rem;
+    color: $c-text;
+    box-shadow: $c-shadow 0 .3rem .8rem;
+    background-image: linear-gradient($bg-btnhover, $bg-btnhover);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .7s, color .7s;
+    &:not([disabled]):active {
+      transform: translateY(.3rem);
+      transition: all .3s ease;
+    }
+  }
+  &-items {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+  &-item {
+    animation: parts 1s;
+    animation-delay: calc(.1s * var(--number));
+    transition: animation 1s linear;
+    padding: .3rem 1rem;
+    margin-bottom: .5rem;
+    box-shadow: $c-shadow 0 .3rem .8rem;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+    background-image: linear-gradient($bg-btnhover, $bg-btnhover);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .7s, color .7s;
+    cursor: pointer;
+    &:not([disabled]):active {
+      transform: translateY(.3rem);
+      transition: all .3s ease;
+    }
+    &__active {
+      background-size: 100% 100%;
+      cursor: auto;
+    }
+  }
+  &-active {
+    background-size: 100% 100%;
+    cursor: auto;
+  }
+}
+@keyframes parts {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .category-button:hover,
+  .category-item:hover {
+    background-size: 100% 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .category {
+    padding: 1rem;
+  }
+}

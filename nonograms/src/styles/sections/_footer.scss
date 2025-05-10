@@ -1,0 +1,26 @@
+@import "../util/var";
+@import "../util/mixins";
+.footer {
+    width: 100%;
+    padding: .7rem 0;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-shrink: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    font-size: 1.35rem;
+    &-link {
+        color: inherit;
+        transition: all .5s ease-in-out;
+    }
+}
+@media (hover: hover) and (pointer: fine) {
+    .footer-link:hover {
+        color: $c-gold;
+        scale: 1.15;
+        transition: all .5s ease-in-out;
+    }
+}

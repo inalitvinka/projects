@@ -1,0 +1,12 @@
+@import "../util/var";
+@import "../util/mixins";
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+@import "./category";
+@import "./menu";
+@import "./time";
+@import "./game";

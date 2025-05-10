@@ -1,0 +1,25 @@
+@import "../util/var";
+@import "../util/mixins";
+
+
+.time {
+  max-width: 7rem;
+  width: 100%;
+  border-bottom: solid .2rem $c-gold;
+  border-radius: .4rem;
+  font-size: 2.5rem;
+  &-display {
+    display: flex;
+    padding: .3rem;
+  }
+  &-colon {
+    margin: 0 .7rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .time {
+    width: auto;
+    font-size: 2rem;
+  }
+}

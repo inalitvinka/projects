@@ -1,0 +1,66 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.menu {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  &-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  &-button {
+    padding: .3rem 1rem;
+    border-radius: .5rem;
+    background: transparent;
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+    color: $c-text;
+    box-shadow: $c-shadow 0 .3rem .8rem;
+    background-image: linear-gradient($bg-btnhover, $bg-btnhover);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .7s, color .7s;
+    &:disabled {
+      border-top: solid .2rem $c-menu-active;
+      box-shadow: none;
+      cursor: auto;
+    }
+    &:not([disabled]):active {
+      transform: translateY(.3rem);
+      transition: all .3s ease;
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .menu-buttons:not([disabled]):hover .button-gallery {
+    opacity: .5;
+  }
+  .menu-buttons .button-gallery:not([disabled]):hover {
+    box-shadow: $c-shadow 0 .3rem .8rem;
+    opacity: 1;
+  }
+  .menu-button:not([disabled]):hover {
+    background-size: 100% 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .menu {
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .menu {
+    margin: 2rem 0;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,122 @@
+.modal {
+  &.open .modal-overlay,
+  &.open .modal-window,
+  &.hiding .modal-overlay,
+  &.hiding .modal-window {
+    opacity: 1;
+    z-index: 100;
+  }
+  &-overlay,
+  &-window {
+    opacity: 0;
+    z-index: -1;
+  }
+  &.open .modal-overlay {
+    background-color: rgb(0, 0, 0, .5);
+    transition: all .5s ease-out;
+  }
+  &.open .modal-window {
+    transform: translateY(17rem);
+  }
+  &.hiding .modal-overlay {
+    background-color: rgb(0, 0, 0, 0);
+    transition: all 1s ease-out;
+  }
+  &.hiding .modal-window {
+    transform: translateY(-50rem);
+  }
+  &-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0);
+
+    transition: all 1s ease-out;
+    
+  }
+  &-window {
+    max-width: 46rem;
+    width: 100%;
+    padding: 3.5rem 1rem 3rem;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    background: $bg-modal;
+    transform: translateY(-50rem);
+    transition: transform .7s ease-in;
+  }
+  &-title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: $bg-modal-title;
+    text-align: center;
+  }
+  &-content {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  &-button {
+    text-align: center;
+  }
+  &-btn {
+    padding: 0 1.3rem .5rem;
+    border-radius: .5rem;
+    font-size: 2.1rem;
+    background-color: transparent;
+    color: $bg-modal-title;
+    box-shadow: $c-shadow 0 .3rem .8rem;
+    background-image: linear-gradient($c-gold, $c-gold);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 1.1s, color 1.1s;
+    &:not([disabled]):active {
+      transform: translateY(.3rem);
+      transition: all .3s ease;
+    }
+  }
+}
+.score {
+  &-content,
+  &-info {
+    display: flex;
+    justify-content: space-around;
+  }
+  &-content {
+    padding: .5rem 0 .7rem 0;
+    border-bottom: solid .2rem $c-gold;
+    border-top: solid .2rem $c-gold;
+    border-radius: .2rem;
+    font-weight: normal;
+  }
+  &-title {
+    width: 10rem;
+    text-align: center;
+  }
+  &-info {
+    padding: 1rem 0;
+    color: $modal-scoretext;
+    font-weight: normal;
+    font-size: 1.8rem;
+  }
+  &-item {
+    width: 7rem;
+    text-align: center;
+  }
+  &-result {
+    padding-bottom: 1.5rem;
+    font-weight: normal;
+  }
+}
+body.lock {
+  overflow: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .modal-btn:hover {
+    background-size: 100% 100%;
+  }
+}

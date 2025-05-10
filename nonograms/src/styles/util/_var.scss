@@ -1,0 +1,69 @@
+:root {
+  --bg-body: rgba(222, 223, 223, .2);
+  --bgc-body: rgb(55, 55, 90, .9);
+  --text-color: rgba(0, 0, 0);
+  --bg-color: rgba(250, 250, 250, .9);
+  --bg-hints: rgba(170, 184, 223, 0.9);
+  --bg-panel: rgba(156, 197, 229, .7);
+  --bg-btnhover: rgb(215, 217, 253, .9);
+  --bg-cell: transparent;
+  --border-cell: rgba(0, 0, 0, .7);
+  --extra-bottom-border: rgba(0, 0, 0);
+  --extra-right-border: rgba(0, 0, 0);
+  --border-hints: rgba(0, 0, 0);
+  --url-active-cell: url('../assets/images/active-cell.png');
+  --c-category-active: rgba(23, 75, 75, .8);
+  --bg-modal: rgba(255, 255, 255, .95);
+  --bg-modal-title: rgba(0, 0, 0);
+  --border-modal-content: rgba(31, 98, 98, .8);
+  --border-modal-btn: rgba(3, 150, 150, .8);
+  --modal-scoretext: rgba(0, 0, 0);
+}
+.dark-theme {
+  --text-color: rgba(255, 255, 255);
+  --bg-color: rgba(0, 0, 0, .7);
+  --bg-body: rgba(11, 10, 10, .4);
+  --bgc-body: rgb(167, 167, 204);
+  --bg-hints: rgba(62, 95, 120, .9);
+  --bg-panel: rgba(38, 62, 78);
+  --bg-menu-panel: rgba(38, 62, 78);
+  --bg-btnhover: rgba(69, 115, 150, .9);
+  --bg-cell: transparent;
+  --border-cell: rgba(255, 255, 255, .6);
+  --extra-bottom-border: rgba(255, 255, 255, .8);
+  --extra-right-border: rgba(255, 255, 255, .8);
+  --border-hints: rgba(255, 255, 255, .8);
+  --url-active-cell: url('../assets/images/active-cell-white2.png');
+  --c-category-active: rgba(27, 186, 186, .5);
+  --bg-modal: rgba(22, 36, 47);
+  --bg-modal-title: rgba(255, 255, 255);
+  --border-modal-content: rgba(0, 128, 128, .8);
+  --border-modal-btn: rgba(0, 128, 128, .3);
+  --modal-scoretext: rgba(255, 255, 255);
+}
+$c-text: var(--text-color);
+$bg-color: var(--bg-color);
+$bg-panel:  var(--bg-panel);
+$bg-menu-panel: var(--bg-menu-panel);
+$bg-btnhover: var(--bg-btnhover);
+$bg-body: var(--bg-body);
+$c-body: var(--bgc-body);
+$bg-hints: var(--bg-hints);
+$bg-cell: var(--bg-cell);
+$border-cell: var(--border-cell);
+$extra-bottom-border: var(--extra-bottom-border);
+$extra-right-border: var(--extra-right-border);
+$c-border-black:var(--border-hints);
+$url-active-cell: var(--url-active-cell);
+$active-cell: var(--active-cell);
+$c-category-active: var(--c-category-active);
+$bg-modal: var(--bg-modal);
+$bg-modal-title: var(--bg-modal-title);
+$border-modal-content: var(--border-modal-content);
+$border-modal-btn: var(--border-modal-btn);
+$modal-scoretext: var(--modal-scoretext);
+
+
+$c-gold: rgba(218, 165, 32);
+$c-shadow: rgba(0, 0, 0, .25);
+$c-menu-active: rgba(218, 165, 32);

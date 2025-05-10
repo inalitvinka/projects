@@ -1,0 +1,90 @@
+/*=======GLOBAL=======*/
+@import "var";
+@import "fonts";
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    display: inline-block;
+    background: transparent;
+    text-decoration: none;
+}
+
+a:hover,
+a:visited {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    vertical-align: top;
+}
+textarea {
+    resize: none;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    // overflow-x: hidden;
+    font-family: 'Farsan', sans-serif;
+    background-color: $c-body;
+    background-blend-mode: color;
+    background-attachment: fixed;
+    color: $c-text;
+}
+
+.container {
+    max-width: 70rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    transition: background .5s ease-in-out;
+}
+.wrapper {
+    max-width: 70rem;
+    width: 100%;
+    background: $bg-color;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    transition: background .5s ease-in-out;
+}
+
+// ADAPTIVE
+@media screen and (max-width: 550.9px) {
+    .container {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+}
