@@ -1,5 +1,6 @@
 |   projects	|  	|  	|  	|
 |:----------:|:----------:	|:------:	|:------:	|
+|e-commerce application|[code](https://github.com/inalitvinka/online-store)|[deploy](https://code-mode-online-store-sprint4.netlify.app/)|[requirements](https://github.com/rolling-scopes-school/tasks/tree/master/tasks/eCommerce-Application)|
 |async-race|[code](https://github.com/inalitvinka/projects/tree/async-race)|[deploy](https://inalitvinka.github.io/projects/async-race/)|[requirements](https://github.com/rolling-scopes-school/tasks/tree/master/stage2/tasks/async-race)|
 |news-api|[code](https://github.com/inalitvinka/projects/tree/news-api)|[deploy](https://inalitvinka.github.io/projects/news-api/)|[requirements](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/migration-newip-to-ts.md)|
 |HTML-builder|[code](https://github.com/inalitvinka/HTML-builder)| - |[requirements](https://github.com/rolling-scopes-school/tasks/tree/master/stage1/tasks/html-builder)|
